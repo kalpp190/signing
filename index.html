@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Kalp Patel">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Systems Converter</title>
+    <script src="./scripts.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+    Number: <input id="userInput" type="text" oninput="checkTwoDecimal(), checkSpaces()">
+    <br /><br />
+    <table>
+        <tr>
+            <th> From </th>
+            <th>&nbsp;&nbsp;&nbsp;</th>
+            <th> To </th>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" id="decimalR" value="decimalR" name="startingType" onchange="checkSameType('radio', 'decimal')" />
+                <label for="decimalR">Decimal (Base-10)</label>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td>
+                <input type="checkbox" id="decimalC" value="decimalC" name="endingType" onchange="checkSameType('checkbox', 'decimal')" />
+                <label for="decimalC">Decimal (Base-10)</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" id="binaryR" value="binaryR" name="startingType" onchange="checkSameType('radio', 'binary')" />
+                <label for="binaryR">Binary (Base-2)</label>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td>
+                <input type="checkbox" id="binaryC" value="binaryC" name="endingType" onchange="checkSameType('checkbox', 'binary')" />
+                <label for="binaryC">Binary (Base-2)</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" id="octalR" value="octalR" name="startingType" onchange="checkSameType('radio', 'octal')" />
+                <label for="octalR">Octal (Base-8)</label>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td>
+                <input type="checkbox" id="octalC" value="octalC" name="endingType" onchange="checkSameType('checkbox', 'octal')" />
+                <label for="octalC">Octal (Base-8)</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" id="hexadecimalR" value="hexadecimalR" name="startingType" onchange="checkSameType('radio', 'hexadecimal')" />
+                <label for="hexadecimalR">Hexadecimal (Base-16)</label>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td>
+                <input type="checkbox" id="hexadecimalC" value="hexadecimalC" name="endingType" onchange="checkSameType('checkbox', 'hexadecimal')" />
+                <label for="hexadecimalC">Hexadecimal (Base-16)</label>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <button id="convertBtn" type="submit" onclick="convert()">Convert</button>
+    <button id="resetBtn" type="reset" onclick="clearSelection()">Reset</button>
+    <br /><br />
+    <span id="errors"></span>
+    <p id="answers"></p>
+</body>
+</html>
